@@ -5,7 +5,7 @@ const item = document.createElement('div');
 
 addBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    if (!input.value.length) {
+    if (!input.value.trim().length) {
         return false;
     }
     item.innerHTML += `  <div class="task">
@@ -13,7 +13,6 @@ addBtn.addEventListener('click', function (event) {
                             <a href="#" class="task__remove">&times;</a>
                         </div>
                     `;
-    debugger
     list.appendChild(item);
     input.value = '';
 });
