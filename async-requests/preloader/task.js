@@ -6,9 +6,10 @@ xhr.open("GET", "https://students.netoservices.ru/nestjs-backend/slow-get-course
 
 xhr.onload = function (data) {
     if (xhr.status === 200) {
+        
         let sData = data.target.response;
         let oData = JSON.parse(sData);
-        
+
         items.insertAdjacentHTML("afterbegin", Array.from(Object.values(oData.response.Valute)).map(elem =>
             `<div class="item">
                 <div class="item__code">

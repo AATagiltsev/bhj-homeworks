@@ -4,7 +4,9 @@ const pollAnswers = document.querySelector(`.poll__answers`);
 
 
 xhr.open("GET", "https://students.netoservices.ru/nestjs-backend/poll");
+
 xhr.send();
+
 xhr.onload = function (data) {
     if (xhr.status === 200) {
         let sData = data.target.response;
