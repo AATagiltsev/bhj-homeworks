@@ -1,14 +1,11 @@
 const xhr = new XMLHttpRequest();
 const signInForm = document.getElementById("signin__form");
-const login = document.getElementsByName("login")[0];
-const password = document.getElementsByName("password")[0];
-const signInBtn = document.getElementById("signin__btn");
 const welcome = document.getElementById('welcome');
 const userId = document.getElementById('user_id');
 
 if (localStorage.getItem("loginedUser")) {
     welcome.classList.add('welcome_active');
-    document.getElementById("user_id").innerText = localStorage.getItem("loginedUser");
+    userId.innerText = localStorage.getItem("loginedUser");
 } else {
     welcome.classList.remove('welcome_active');
 }
@@ -23,7 +20,6 @@ signInForm.addEventListener("submit", (e) => {
                 localStorage.setItem("loginedUser", uid);
                 userId.innerText = uid;
                 welcome.classList.add("welcome_active");
-                document.getElementById("user_id").innerText = uid;
             }
         } else {
             alert(xhr.statusText)
